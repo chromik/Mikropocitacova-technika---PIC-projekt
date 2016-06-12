@@ -1,0 +1,1469 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
+                                                                                               Thu Jan  8 09:56:40 2015
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 59893
+     1                           	processor	16F877A
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	text0,local,class=CODE,merge=1,inline,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     7                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	maintext,global,class=CODE,split=1,delta=2
+    10                           	psect	text1,local,class=CODE,merge=1,inline,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,inline,delta=2
+    12                           	psect	text3,local,class=CODE,merge=1,inline,delta=2
+    13                           	psect	text4,local,class=CODE,merge=1,delta=2
+    14                           	psect	text5,local,class=CODE,merge=1,delta=2
+    15                           	psect	text6,local,class=CODE,merge=1,delta=2
+    16                           	psect	text7,local,class=CODE,merge=1,delta=2
+    17                           	psect	text8,local,class=CODE,merge=1,inline,delta=2
+    18                           	psect	text9,local,class=CODE,merge=1,delta=2
+    19                           	psect	text10,local,class=CODE,merge=1,delta=2
+    20                           	psect	text11,local,class=CODE,merge=1,delta=2
+    21                           	psect	text12,local,class=CODE,merge=1,inline,delta=2
+    22                           	dabs	1,0x7E,2
+    23  0000                     	;# 
+    24  0001                     	;# 
+    25  0002                     	;# 
+    26  0003                     	;# 
+    27  0004                     	;# 
+    28  0005                     	;# 
+    29  0006                     	;# 
+    30  0007                     	;# 
+    31  0008                     	;# 
+    32  0009                     	;# 
+    33  000A                     	;# 
+    34  000B                     	;# 
+    35  000C                     	;# 
+    36  000D                     	;# 
+    37  000E                     	;# 
+    38  000E                     	;# 
+    39  000F                     	;# 
+    40  0010                     	;# 
+    41  0011                     	;# 
+    42  0012                     	;# 
+    43  0013                     	;# 
+    44  0014                     	;# 
+    45  0015                     	;# 
+    46  0015                     	;# 
+    47  0016                     	;# 
+    48  0017                     	;# 
+    49  0018                     	;# 
+    50  0019                     	;# 
+    51  001A                     	;# 
+    52  001B                     	;# 
+    53  001B                     	;# 
+    54  001C                     	;# 
+    55  001D                     	;# 
+    56  001E                     	;# 
+    57  001F                     	;# 
+    58  0081                     	;# 
+    59  0085                     	;# 
+    60  0086                     	;# 
+    61  0087                     	;# 
+    62  0088                     	;# 
+    63  0089                     	;# 
+    64  008C                     	;# 
+    65  008D                     	;# 
+    66  008E                     	;# 
+    67  0091                     	;# 
+    68  0092                     	;# 
+    69  0093                     	;# 
+    70  0094                     	;# 
+    71  0098                     	;# 
+    72  0099                     	;# 
+    73  009C                     	;# 
+    74  009D                     	;# 
+    75  009E                     	;# 
+    76  009F                     	;# 
+    77  010C                     	;# 
+    78  010D                     	;# 
+    79  010E                     	;# 
+    80  010F                     	;# 
+    81  018C                     	;# 
+    82  018D                     	;# 
+    83  000E                     _TMR1	set	14
+    84  001F                     _ADCON0	set	31
+    85  001F                     _ADCON0bits	set	31
+    86  001E                     _ADRESH	set	30
+    87  005F                     _GIE	set	95
+    88  0044                     _RD4	set	68
+    89  0047                     _RD7	set	71
+    90  0084                     _T1CKPS0	set	132
+    91  0085                     _T1CKPS1	set	133
+    92  0081                     _TMR1CS	set	129
+    93  0060                     _TMR1IF	set	96
+    94  0080                     _TMR1ON	set	128
+    95  009F                     _ADCON1	set	159
+    96  009E                     _ADRESL	set	158
+    97  0085                     _TRISA	set	133
+    98  0088                     _TRISD	set	136
+    99  0434                     _TRISB4	set	1076
+   100  0435                     _TRISB5	set	1077
+   101  0448                     _TRISE0	set	1096
+   102                           
+   103                           	psect	text0
+   104  0000                     __ptext0:	
+   105                           ; #config settings
+   106                           
+   107                           
+   108                           ;psect for function _adconverter_configure
+   109  0000                     
+   110                           	psect	cinit
+   111  07F6                     start_initialization:	
+   112  07F6                     __initialization:	
+   113                           
+   114                           ; Clear objects allocated to BANK0
+   115  07F6  01A0               	clrf	__pbssBANK0& (0+127)
+   116  07F7  01A1               	clrf	(__pbssBANK0+1)& (0+127)
+   117  07F8  01A2               	clrf	(__pbssBANK0+2)& (0+127)
+   118  07F9  01A3               	clrf	(__pbssBANK0+3)& (0+127)
+   119  07FA  01A4               	clrf	(__pbssBANK0+4)& (0+127)
+   120  07FB  01A5               	clrf	(__pbssBANK0+5)& (0+127)
+   121  07FC                     end_of_initialization:	
+   122                           ;End of C runtime variable initialization code
+   123                           
+   124  07FC                     __end_of__initialization:	
+   125  07FC  0183               	clrf	3
+   126  07FD  120A  118A  2FA0   	ljmp	_main	;jump to C main() function
+   127                           
+   128                           	psect	bssBANK0
+   129  0020                     __pbssBANK0:	
+   130  0020                     _motor:	
+   131  0020                     	ds	6
+   132                           
+   133                           	psect	cstackCOMMON
+   134  0070                     __pcstackCOMMON:	
+   135  0070                     ?_motor_set:	
+   136  0070                     ??_motor_set:	
+   137                           ; 0 bytes @ 0x0
+   138                           
+   139  0070                     ?_motor_run:	
+   140                           ; 0 bytes @ 0x0
+   141                           
+   142  0070                     ??_motor_run:	
+   143                           ; 0 bytes @ 0x0
+   144                           
+   145  0070                     ?_rotate_change:	
+   146                           ; 0 bytes @ 0x0
+   147                           
+   148  0070                     ??_rotate_change:	
+   149                           ; 0 bytes @ 0x0
+   150                           
+   151  0070                     ?_ports_configure:	
+   152                           ; 0 bytes @ 0x0
+   153                           
+   154  0070                     ??_ports_configure:	
+   155                           ; 0 bytes @ 0x0
+   156                           
+   157  0070                     ?_timer1_configure:	
+   158                           ; 0 bytes @ 0x0
+   159                           
+   160  0070                     ??_timer1_configure:	
+   161                           ; 0 bytes @ 0x0
+   162                           
+   163  0070                     ?_adconverter_configure:	
+   164                           ; 0 bytes @ 0x0
+   165                           
+   166  0070                     ??_adconverter_configure:	
+   167                           ; 0 bytes @ 0x0
+   168                           
+   169  0070                     ?_measure_predelay_20ms:	
+   170                           ; 0 bytes @ 0x0
+   171                           
+   172  0070                     ??_measure_predelay_20ms:	
+   173                           ; 0 bytes @ 0x0
+   174                           
+   175  0070                     ?_motor_stop_1s:	
+   176                           ; 0 bytes @ 0x0
+   177                           
+   178  0070                     ??_motor_stop_1s:	
+   179                           ; 0 bytes @ 0x0
+   180                           
+   181  0070                     ?_time_delay_2s:	
+   182                           ; 0 bytes @ 0x0
+   183                           
+   184  0070                     ??_time_delay_2s:	
+   185                           ; 0 bytes @ 0x0
+   186                           
+   187  0070                     ?_motor_running_10s:	
+   188                           ; 0 bytes @ 0x0
+   189                           
+   190  0070                     ?_main:	
+   191                           ; 0 bytes @ 0x0
+   192                           
+   193  0070                     ?_measure:	
+   194                           ; 0 bytes @ 0x0
+   195                           
+   196  0070                     measure_predelay_20ms@i:	
+   197                           ; 2 bytes @ 0x0
+   198                           
+   199  0070                     motor_stop_1s@i:	
+   200                           ; 2 bytes @ 0x0
+   201                           
+   202  0070                     time_delay_2s@i:	
+   203                           ; 2 bytes @ 0x0
+   204                           
+   205                           
+   206                           ; 2 bytes @ 0x0
+   207  0070                     	ds	2
+   208  0072                     ??_measure:	
+   209                           
+   210                           ; 0 bytes @ 0x2
+   211  0072                     	ds	7
+   212  0079                     measure@value:	
+   213                           
+   214                           ; 2 bytes @ 0x9
+   215  0079                     	ds	2
+   216  007B                     ?_check_disrupt:	
+   217                           
+   218                           ; 2 bytes @ 0xB
+   219  007B                     	ds	2
+   220  007D                     ??_motor_running_10s:	
+   221  007D                     ??_main:	
+   222                           ; 0 bytes @ 0xD
+   223                           
+   224                           
+   225                           	psect	cstackBANK0
+   226  0026                     __pcstackBANK0:	
+   227                           ; 0 bytes @ 0xD
+   228                           
+   229  0026                     ??_check_disrupt:	
+   230                           
+   231                           ; 0 bytes @ 0x0
+   232  0026                     	ds	2
+   233  0028                     motor_running_10s@i:	
+   234                           
+   235                           ; 2 bytes @ 0x2
+   236  0028                     	ds	2
+   237                           
+   238                           	psect	maintext
+   239  07A0                     __pmaintext:	
+   240 ;;
+   241 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   242 ;;
+   243 ;; *************** function _main *****************
+   244 ;; Defined at:
+   245 ;;		line 165 in file "main.c"
+   246 ;; Parameters:    Size  Location     Type
+   247 ;;		None
+   248 ;; Auto vars:     Size  Location     Type
+   249 ;;		None
+   250 ;; Return value:  Size  Location     Type
+   251 ;;		None               void
+   252 ;; Registers used:
+   253 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+   254 ;; Tracked objects:
+   255 ;;		On entry : 17F/0
+   256 ;;		On exit  : 0/0
+   257 ;;		Unchanged: 0/0
+   258 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   259 ;;      Params:         0       0       0       0       0
+   260 ;;      Locals:         0       0       0       0       0
+   261 ;;      Temps:          0       0       0       0       0
+   262 ;;      Totals:         0       0       0       0       0
+   263 ;;Total ram usage:        0 bytes
+   264 ;; Hardware stack levels required when called:    3
+   265 ;; This function calls:
+   266 ;;		_adconverter_configure
+   267 ;;		_measure
+   268 ;;		_measure_predelay_20ms
+   269 ;;		_motor_run
+   270 ;;		_motor_running_10s
+   271 ;;		_motor_set
+   272 ;;		_motor_stop_1s
+   273 ;;		_ports_configure
+   274 ;;		_rotate_change
+   275 ;;		_timer1_configure
+   276 ;; This function is called by:
+   277 ;;		Startup code after reset
+   278 ;; This function uses a non-reentrant model
+   279 ;;
+   280                           
+   281                           
+   282                           ;psect for function _main
+   283  07A0                     _main:	
+   284                           
+   285                           ;main.c: 167: adconverter_configure();
+   286                           
+   287                           ;incstack = 0
+   288                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   289  07A0  120A  118A  2671  120A  118A  	fcall	_adconverter_configure
+   290                           
+   291                           ;main.c: 168: GIE = 0;
+   292  07A5  138B               	bcf	11,7	;volatile
+   293                           
+   294                           ;main.c: 169: ports_configure();
+   295  07A6  120A  118A  267A  120A  118A  	fcall	_ports_configure
+   296                           
+   297                           ;main.c: 170: timer1_configure();
+   298  07AB  120A  118A  2683  120A  118A  	fcall	_timer1_configure
+   299                           
+   300                           ;main.c: 172: motor_set();
+   301  07B0  120A  118A  266B  120A  118A  	fcall	_motor_set
+   302                           
+   303                           ;main.c: 173: measure_predelay_20ms();
+   304  07B5  120A  118A  26B4  120A  118A  	fcall	_measure_predelay_20ms
+   305                           
+   306                           ;main.c: 174: motor.uin_prev = motor.uin = measure();
+   307  07BA  120A  118A  2738  120A  118A  	fcall	_measure
+   308  07BF  0871               	movf	?_measure+1,w
+   309  07C0  1283               	bcf	3,5	;RP0=0, select bank0
+   310  07C1  1303               	bcf	3,6	;RP1=0, select bank0
+   311  07C2  01A3               	clrf	_motor+3
+   312  07C3  07A3               	addwf	_motor+3,f
+   313  07C4  0870               	movf	?_measure,w
+   314  07C5  01A2               	clrf	_motor+2
+   315  07C6  07A2               	addwf	_motor+2,f
+   316  07C7  0823               	movf	_motor+3,w
+   317  07C8  01A5               	clrf	_motor+5
+   318  07C9  07A5               	addwf	_motor+5,f
+   319  07CA  0822               	movf	_motor+2,w
+   320  07CB  01A4               	clrf	_motor+4
+   321  07CC  07A4               	addwf	_motor+4,f
+   322  07CD                     l799:	
+   323                           ;main.c: 176: while(1) {
+   324                           
+   325                           
+   326                           ;main.c: 178: motor_run();
+   327  07CD  120A  118A  269F  120A  118A  	fcall	_motor_run
+   328                           
+   329                           ;main.c: 179: motor_running_10s();
+   330  07D2  120A  118A  2767  120A  118A  	fcall	_motor_running_10s
+   331                           
+   332                           ;main.c: 181: motor_stop_1s();
+   333  07D7  120A  118A  26EE  120A  118A  	fcall	_motor_stop_1s
+   334                           
+   335                           ;main.c: 183: rotate_change();
+   336  07DC  120A  118A  268E  120A  118A  	fcall	_rotate_change
+   337                           
+   338                           ;main.c: 184: motor_run();
+   339  07E1  120A  118A  269F  120A  118A  	fcall	_motor_run
+   340                           
+   341                           ;main.c: 185: motor_running_10s();
+   342  07E6  120A  118A  2767  120A  118A  	fcall	_motor_running_10s
+   343                           
+   344                           ;main.c: 187: motor_stop_1s();
+   345  07EB  120A  118A  26EE  120A  118A  	fcall	_motor_stop_1s
+   346                           
+   347                           ;main.c: 189: rotate_change();
+   348  07F0  120A  118A  268E  120A  118A  	fcall	_rotate_change
+   349  07F5  2FCD               	goto	l799
+   350  07F6                     __end_of_main:	
+   351                           
+   352                           	psect	text1
+   353  0683                     __ptext1:	
+   354 ;; *************** function _timer1_configure *****************
+   355 ;; Defined at:
+   356 ;;		line 73 in file "main.c"
+   357 ;; Parameters:    Size  Location     Type
+   358 ;;		None
+   359 ;; Auto vars:     Size  Location     Type
+   360 ;;		None
+   361 ;; Return value:  Size  Location     Type
+   362 ;;		None               void
+   363 ;; Registers used:
+   364 ;;		None
+   365 ;; Tracked objects:
+   366 ;;		On entry : 0/0
+   367 ;;		On exit  : 0/0
+   368 ;;		Unchanged: 0/0
+   369 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   370 ;;      Params:         0       0       0       0       0
+   371 ;;      Locals:         0       0       0       0       0
+   372 ;;      Temps:          0       0       0       0       0
+   373 ;;      Totals:         0       0       0       0       0
+   374 ;;Total ram usage:        0 bytes
+   375 ;; Hardware stack levels used:    1
+   376 ;; This function calls:
+   377 ;;		Nothing
+   378 ;; This function is called by:
+   379 ;;		_main
+   380 ;; This function uses a non-reentrant model
+   381 ;;
+   382                           
+   383                           
+   384                           ;psect for function _timer1_configure
+   385  0683                     _timer1_configure:	
+   386                           
+   387                           ;main.c: 77: TMR1ON = 1;
+   388                           
+   389                           ;incstack = 0
+   390                           ; Regs used in _timer1_configure: []
+   391  0683  1283               	bcf	3,5	;RP0=0, select bank0
+   392  0684  1303               	bcf	3,6	;RP1=0, select bank0
+   393  0685  1410               	bsf	16,0	;volatile
+   394                           
+   395                           ;main.c: 78: TMR1CS = 0;
+   396  0686  1090               	bcf	16,1	;volatile
+   397                           
+   398                           ;main.c: 79: T1CKPS0 = 0;
+   399  0687  1210               	bcf	16,4	;volatile
+   400                           
+   401                           ;main.c: 80: T1CKPS1 = 0;
+   402  0688  1290               	bcf	16,5	;volatile
+   403                           
+   404                           ;main.c: 81: TMR1 = 19456;
+   405  0689  304C               	movlw	76
+   406  068A  008F               	movwf	15	;volatile
+   407  068B  3000               	movlw	0
+   408  068C  008E               	movwf	14	;volatile
+   409  068D  0008               	return
+   410  068E                     __end_of_timer1_configure:	
+   411                           
+   412                           	psect	text2
+   413  068E                     __ptext2:	
+   414 ;; *************** function _rotate_change *****************
+   415 ;; Defined at:
+   416 ;;		line 44 in file "main.c"
+   417 ;; Parameters:    Size  Location     Type
+   418 ;;		None
+   419 ;; Auto vars:     Size  Location     Type
+   420 ;;		None
+   421 ;; Return value:  Size  Location     Type
+   422 ;;		None               void
+   423 ;; Registers used:
+   424 ;;		wreg
+   425 ;; Tracked objects:
+   426 ;;		On entry : 0/0
+   427 ;;		On exit  : 0/0
+   428 ;;		Unchanged: 0/0
+   429 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   430 ;;      Params:         0       0       0       0       0
+   431 ;;      Locals:         0       0       0       0       0
+   432 ;;      Temps:          1       0       0       0       0
+   433 ;;      Totals:         1       0       0       0       0
+   434 ;;Total ram usage:        1 bytes
+   435 ;; Hardware stack levels used:    1
+   436 ;; This function calls:
+   437 ;;		Nothing
+   438 ;; This function is called by:
+   439 ;;		_main
+   440 ;; This function uses a non-reentrant model
+   441 ;;
+   442                           
+   443                           
+   444                           ;psect for function _rotate_change
+   445  068E                     _rotate_change:	
+   446                           
+   447                           ;main.c: 46: motor.x = !motor.x;
+   448                           
+   449                           ;incstack = 0
+   450                           ; Regs used in _rotate_change: [wreg]
+   451  068E  1283               	bcf	3,5	;RP0=0, select bank0
+   452  068F  1303               	bcf	3,6	;RP1=0, select bank0
+   453  0690  08A0               	movf	_motor,f
+   454  0691  3000               	movlw	0
+   455  0692  1903               	skipnz
+   456  0693  3001               	movlw	1
+   457  0694  00F0               	movwf	??_rotate_change
+   458  0695  0870               	movf	??_rotate_change,w
+   459  0696  00A0               	movwf	_motor
+   460                           
+   461                           ;main.c: 47: motor.y = !motor.y;
+   462  0697  08A1               	movf	_motor+1,f
+   463  0698  3000               	movlw	0
+   464  0699  1903               	skipnz
+   465  069A  3001               	movlw	1
+   466  069B  00F0               	movwf	??_rotate_change
+   467  069C  0870               	movf	??_rotate_change,w
+   468  069D  00A1               	movwf	_motor+1
+   469  069E  0008               	return
+   470  069F                     __end_of_rotate_change:	
+   471                           
+   472                           	psect	text3
+   473  067A                     __ptext3:	
+   474 ;; *************** function _ports_configure *****************
+   475 ;; Defined at:
+   476 ;;		line 63 in file "main.c"
+   477 ;; Parameters:    Size  Location     Type
+   478 ;;		None
+   479 ;; Auto vars:     Size  Location     Type
+   480 ;;		None
+   481 ;; Return value:  Size  Location     Type
+   482 ;;		None               void
+   483 ;; Registers used:
+   484 ;;		wreg, status,2
+   485 ;; Tracked objects:
+   486 ;;		On entry : 0/0
+   487 ;;		On exit  : 0/0
+   488 ;;		Unchanged: 0/0
+   489 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   490 ;;      Params:         0       0       0       0       0
+   491 ;;      Locals:         0       0       0       0       0
+   492 ;;      Temps:          0       0       0       0       0
+   493 ;;      Totals:         0       0       0       0       0
+   494 ;;Total ram usage:        0 bytes
+   495 ;; Hardware stack levels used:    1
+   496 ;; This function calls:
+   497 ;;		Nothing
+   498 ;; This function is called by:
+   499 ;;		_main
+   500 ;; This function uses a non-reentrant model
+   501 ;;
+   502                           
+   503                           
+   504                           ;psect for function _ports_configure
+   505  067A                     _ports_configure:	
+   506                           
+   507                           ;main.c: 66: TRISD = 0;
+   508                           
+   509                           ;incstack = 0
+   510                           ; Regs used in _ports_configure: [wreg+status,2]
+   511  067A  1683               	bsf	3,5	;RP0=1, select bank1
+   512  067B  1303               	bcf	3,6	;RP1=0, select bank1
+   513  067C  0188               	clrf	8	;volatile
+   514                           
+   515                           ;main.c: 67: TRISB4 = 1;
+   516  067D  1606               	bsf	6,4	;volatile
+   517                           
+   518                           ;main.c: 68: TRISB5 = 1;
+   519  067E  1686               	bsf	6,5	;volatile
+   520                           
+   521                           ;main.c: 69: TRISE0 = 0;
+   522  067F  1009               	bcf	9,0	;volatile
+   523                           
+   524                           ;main.c: 70: TRISA = 0x01;
+   525  0680  3001               	movlw	1
+   526  0681  0085               	movwf	5	;volatile
+   527  0682  0008               	return
+   528  0683                     __end_of_ports_configure:	
+   529                           
+   530                           	psect	text4
+   531  066B                     __ptext4:	
+   532 ;; *************** function _motor_set *****************
+   533 ;; Defined at:
+   534 ;;		line 32 in file "main.c"
+   535 ;; Parameters:    Size  Location     Type
+   536 ;;		None
+   537 ;; Auto vars:     Size  Location     Type
+   538 ;;		None
+   539 ;; Return value:  Size  Location     Type
+   540 ;;		None               void
+   541 ;; Registers used:
+   542 ;;		status,2
+   543 ;; Tracked objects:
+   544 ;;		On entry : 0/0
+   545 ;;		On exit  : 0/0
+   546 ;;		Unchanged: 0/0
+   547 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   548 ;;      Params:         0       0       0       0       0
+   549 ;;      Locals:         0       0       0       0       0
+   550 ;;      Temps:          0       0       0       0       0
+   551 ;;      Totals:         0       0       0       0       0
+   552 ;;Total ram usage:        0 bytes
+   553 ;; Hardware stack levels used:    1
+   554 ;; This function calls:
+   555 ;;		Nothing
+   556 ;; This function is called by:
+   557 ;;		_main
+   558 ;; This function uses a non-reentrant model
+   559 ;;
+   560                           
+   561                           
+   562                           ;psect for function _motor_set
+   563  066B                     _motor_set:	
+   564                           
+   565                           ;main.c: 34: motor.x = 0;
+   566                           
+   567                           ;incstack = 0
+   568                           ; Regs used in _motor_set: [status,2]
+   569  066B  1283               	bcf	3,5	;RP0=0, select bank0
+   570  066C  1303               	bcf	3,6	;RP1=0, select bank0
+   571  066D  01A0               	clrf	_motor
+   572                           
+   573                           ;main.c: 35: motor.y = 1;
+   574  066E  01A1               	clrf	_motor+1
+   575  066F  0AA1               	incf	_motor+1,f
+   576  0670  0008               	return
+   577  0671                     __end_of_motor_set:	
+   578                           
+   579                           	psect	text5
+   580  0767                     __ptext5:	
+   581 ;; *************** function _motor_running_10s *****************
+   582 ;; Defined at:
+   583 ;;		line 125 in file "main.c"
+   584 ;; Parameters:    Size  Location     Type
+   585 ;;		None
+   586 ;; Auto vars:     Size  Location     Type
+   587 ;;  i               2    2[BANK0 ] int 
+   588 ;; Return value:  Size  Location     Type
+   589 ;;		None               void
+   590 ;; Registers used:
+   591 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+   592 ;; Tracked objects:
+   593 ;;		On entry : 0/0
+   594 ;;		On exit  : 0/0
+   595 ;;		Unchanged: 0/0
+   596 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   597 ;;      Params:         0       0       0       0       0
+   598 ;;      Locals:         0       2       0       0       0
+   599 ;;      Temps:          0       0       0       0       0
+   600 ;;      Totals:         0       2       0       0       0
+   601 ;;Total ram usage:        2 bytes
+   602 ;; Hardware stack levels used:    1
+   603 ;; Hardware stack levels required when called:    2
+   604 ;; This function calls:
+   605 ;;		_check_disrupt
+   606 ;;		_motor_run
+   607 ;;		_motor_stop_1s
+   608 ;;		_time_delay_2s
+   609 ;; This function is called by:
+   610 ;;		_main
+   611 ;; This function uses a non-reentrant model
+   612 ;;
+   613                           
+   614                           
+   615                           ;psect for function _motor_running_10s
+   616  0767                     _motor_running_10s:	
+   617                           
+   618                           ;main.c: 128: for(int i=0; i<1000; ++i) {
+   619                           
+   620                           ;incstack = 0
+   621                           ; Regs used in _motor_running_10s: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   622  0767  1283               	bcf	3,5	;RP0=0, select bank0
+   623  0768  1303               	bcf	3,6	;RP1=0, select bank0
+   624  0769  01A8               	clrf	motor_running_10s@i
+   625  076A  01A9               	clrf	motor_running_10s@i+1
+   626  076B                     L1:	
+   627  076B  0829               	movf	motor_running_10s@i+1,w
+   628  076C  3A80               	xorlw	128
+   629  076D  00FF               	movwf	127
+   630  076E  3083               	movlw	131
+   631  076F  027F               	subwf	127,w
+   632  0770  1D03               	skipz
+   633  0771  2F74               	goto	u375
+   634  0772  30E8               	movlw	232
+   635  0773  0228               	subwf	motor_running_10s@i,w
+   636  0774                     u375:	
+   637  0774  1803               	btfsc	3,0
+   638  0775  0008               	return
+   639                           
+   640                           ;main.c: 129: TMR1 = 19801;
+   641  0776  304D               	movlw	77
+   642  0777  1283               	bcf	3,5	;RP0=0, select bank0
+   643  0778  1303               	bcf	3,6	;RP1=0, select bank0
+   644  0779  008F               	movwf	15	;volatile
+   645  077A  3059               	movlw	89
+   646  077B  008E               	movwf	14	;volatile
+   647  077C                     l89:	
+   648                           ;main.c: 130: while(!TMR1IF);
+   649                           
+   650  077C  1C0C               	btfss	12,0	;volatile
+   651  077D  2F7C               	goto	l89
+   652                           
+   653                           ;main.c: 132: if (check_disrupt()) {
+   654  077E  120A  118A  270F  120A  118A  	fcall	_check_disrupt
+   655  0783  087C               	movf	?_check_disrupt+1,w
+   656  0784  047B               	iorwf	?_check_disrupt,w
+   657  0785  1903               	skipnz
+   658  0786  2F96               	goto	l781
+   659                           
+   660                           ;main.c: 133: motor_stop_1s();
+   661  0787  120A  118A  26EE  120A  118A  	fcall	_motor_stop_1s
+   662                           
+   663                           ;main.c: 134: time_delay_2s();
+   664  078C  120A  118A  26D1  120A  118A  	fcall	_time_delay_2s
+   665                           
+   666                           ;main.c: 135: motor_run();
+   667  0791  120A  118A  269F  120A  118A  	fcall	_motor_run
+   668  0796                     l781:	
+   669                           
+   670                           ;main.c: 136: }
+   671                           ;main.c: 138: TMR1IF = 0;
+   672  0796  1283               	bcf	3,5	;RP0=0, select bank0
+   673  0797  1303               	bcf	3,6	;RP1=0, select bank0
+   674  0798  100C               	bcf	12,0	;volatile
+   675  0799  3001               	movlw	1
+   676  079A  07A8               	addwf	motor_running_10s@i,f
+   677  079B  1803               	skipnc
+   678  079C  0AA9               	incf	motor_running_10s@i+1,f
+   679  079D  3000               	movlw	0
+   680  079E  07A9               	addwf	motor_running_10s@i+1,f
+   681  079F  2F6B               	goto	L1
+   682  07A0                     __end_of_motor_running_10s:	
+   683                           
+   684                           	psect	text6
+   685  06D1                     __ptext6:	
+   686 ;; *************** function _time_delay_2s *****************
+   687 ;; Defined at:
+   688 ;;		line 115 in file "main.c"
+   689 ;; Parameters:    Size  Location     Type
+   690 ;;		None
+   691 ;; Auto vars:     Size  Location     Type
+   692 ;;  i               2    0[COMMON] int 
+   693 ;; Return value:  Size  Location     Type
+   694 ;;		None               void
+   695 ;; Registers used:
+   696 ;;		wreg, status,2, btemp+1
+   697 ;; Tracked objects:
+   698 ;;		On entry : 0/0
+   699 ;;		On exit  : 0/0
+   700 ;;		Unchanged: 0/0
+   701 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   702 ;;      Params:         0       0       0       0       0
+   703 ;;      Locals:         2       0       0       0       0
+   704 ;;      Temps:          0       0       0       0       0
+   705 ;;      Totals:         2       0       0       0       0
+   706 ;;Total ram usage:        2 bytes
+   707 ;; Hardware stack levels used:    1
+   708 ;; This function calls:
+   709 ;;		Nothing
+   710 ;; This function is called by:
+   711 ;;		_motor_running_10s
+   712 ;; This function uses a non-reentrant model
+   713 ;;
+   714                           
+   715                           
+   716                           ;psect for function _time_delay_2s
+   717  06D1                     _time_delay_2s:	
+   718                           
+   719                           ;main.c: 118: for(int i=0; i<200; ++i) {
+   720                           
+   721                           ;incstack = 0
+   722                           ; Regs used in _time_delay_2s: [wreg+status,2+btemp+1]
+   723  06D1  01F0               	clrf	time_delay_2s@i
+   724  06D2  01F1               	clrf	time_delay_2s@i+1
+   725  06D3                     L2:	
+   726  06D3  0871               	movf	time_delay_2s@i+1,w
+   727  06D4  3A80               	xorlw	128
+   728  06D5  00FF               	movwf	127
+   729  06D6  3080               	movlw	128
+   730  06D7  027F               	subwf	127,w
+   731  06D8  1D03               	skipz
+   732  06D9  2EDC               	goto	u305
+   733  06DA  30C8               	movlw	200
+   734  06DB  0270               	subwf	time_delay_2s@i,w
+   735  06DC                     u305:	
+   736  06DC  1803               	btfsc	3,0
+   737  06DD  0008               	return
+   738                           
+   739                           ;main.c: 119: TMR1 = 19456;
+   740  06DE  304C               	movlw	76
+   741  06DF  1283               	bcf	3,5	;RP0=0, select bank0
+   742  06E0  1303               	bcf	3,6	;RP1=0, select bank0
+   743  06E1  008F               	movwf	15	;volatile
+   744  06E2  3000               	movlw	0
+   745  06E3  008E               	movwf	14	;volatile
+   746  06E4                     l81:	
+   747                           ;main.c: 120: while(!TMR1IF);
+   748                           
+   749  06E4  1C0C               	btfss	12,0	;volatile
+   750  06E5  2EE4               	goto	l81
+   751                           
+   752                           ;main.c: 121: TMR1IF = 0;
+   753  06E6  100C               	bcf	12,0	;volatile
+   754  06E7  3001               	movlw	1
+   755  06E8  07F0               	addwf	time_delay_2s@i,f
+   756  06E9  1803               	skipnc
+   757  06EA  0AF1               	incf	time_delay_2s@i+1,f
+   758  06EB  3000               	movlw	0
+   759  06EC  07F1               	addwf	time_delay_2s@i+1,f
+   760  06ED  2ED3               	goto	L2
+   761  06EE                     __end_of_time_delay_2s:	
+   762                           
+   763                           	psect	text7
+   764  06EE                     __ptext7:	
+   765 ;; *************** function _motor_stop_1s *****************
+   766 ;; Defined at:
+   767 ;;		line 103 in file "main.c"
+   768 ;; Parameters:    Size  Location     Type
+   769 ;;		None
+   770 ;; Auto vars:     Size  Location     Type
+   771 ;;  i               2    0[COMMON] int 
+   772 ;; Return value:  Size  Location     Type
+   773 ;;		None               void
+   774 ;; Registers used:
+   775 ;;		wreg, status,2, btemp+1
+   776 ;; Tracked objects:
+   777 ;;		On entry : 0/0
+   778 ;;		On exit  : 0/0
+   779 ;;		Unchanged: 0/0
+   780 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   781 ;;      Params:         0       0       0       0       0
+   782 ;;      Locals:         2       0       0       0       0
+   783 ;;      Temps:          0       0       0       0       0
+   784 ;;      Totals:         2       0       0       0       0
+   785 ;;Total ram usage:        2 bytes
+   786 ;; Hardware stack levels used:    1
+   787 ;; This function calls:
+   788 ;;		Nothing
+   789 ;; This function is called by:
+   790 ;;		_motor_running_10s
+   791 ;;		_main
+   792 ;; This function uses a non-reentrant model
+   793 ;;
+   794                           
+   795                           
+   796                           ;psect for function _motor_stop_1s
+   797  06EE                     _motor_stop_1s:	
+   798                           
+   799                           ;main.c: 105: RD4 = 1;
+   800                           
+   801                           ;incstack = 0
+   802                           ; Regs used in _motor_stop_1s: [wreg+status,2+btemp+1]
+   803  06EE  1283               	bcf	3,5	;RP0=0, select bank0
+   804  06EF  1303               	bcf	3,6	;RP1=0, select bank0
+   805  06F0  1608               	bsf	8,4	;volatile
+   806                           
+   807                           ;main.c: 106: RD7 = 1;
+   808  06F1  1788               	bsf	8,7	;volatile
+   809                           
+   810                           ;main.c: 108: for(int i=0; i<100; ++i) {
+   811  06F2  01F0               	clrf	motor_stop_1s@i
+   812  06F3  01F1               	clrf	motor_stop_1s@i+1
+   813  06F4                     L3:	
+   814  06F4  0871               	movf	motor_stop_1s@i+1,w
+   815  06F5  3A80               	xorlw	128
+   816  06F6  00FF               	movwf	127
+   817  06F7  3080               	movlw	128
+   818  06F8  027F               	subwf	127,w
+   819  06F9  1D03               	skipz
+   820  06FA  2EFD               	goto	u275
+   821  06FB  3064               	movlw	100
+   822  06FC  0270               	subwf	motor_stop_1s@i,w
+   823  06FD                     u275:	
+   824  06FD  1803               	btfsc	3,0
+   825  06FE  0008               	return
+   826                           
+   827                           ;main.c: 109: TMR1 = 19456;
+   828  06FF  304C               	movlw	76
+   829  0700  1283               	bcf	3,5	;RP0=0, select bank0
+   830  0701  1303               	bcf	3,6	;RP1=0, select bank0
+   831  0702  008F               	movwf	15	;volatile
+   832  0703  3000               	movlw	0
+   833  0704  008E               	movwf	14	;volatile
+   834  0705                     l73:	
+   835                           ;main.c: 110: while(!TMR1IF);
+   836                           
+   837  0705  1C0C               	btfss	12,0	;volatile
+   838  0706  2F05               	goto	l73
+   839                           
+   840                           ;main.c: 111: TMR1IF = 0;
+   841  0707  100C               	bcf	12,0	;volatile
+   842  0708  3001               	movlw	1
+   843  0709  07F0               	addwf	motor_stop_1s@i,f
+   844  070A  1803               	skipnc
+   845  070B  0AF1               	incf	motor_stop_1s@i+1,f
+   846  070C  3000               	movlw	0
+   847  070D  07F1               	addwf	motor_stop_1s@i+1,f
+   848  070E  2EF4               	goto	L3
+   849  070F                     __end_of_motor_stop_1s:	
+   850                           
+   851                           	psect	text8
+   852  069F                     __ptext8:	
+   853 ;; *************** function _motor_run *****************
+   854 ;; Defined at:
+   855 ;;		line 38 in file "main.c"
+   856 ;; Parameters:    Size  Location     Type
+   857 ;;		None
+   858 ;; Auto vars:     Size  Location     Type
+   859 ;;		None
+   860 ;; Return value:  Size  Location     Type
+   861 ;;		None               void
+   862 ;; Registers used:
+   863 ;;		None
+   864 ;; Tracked objects:
+   865 ;;		On entry : 0/0
+   866 ;;		On exit  : 0/0
+   867 ;;		Unchanged: 0/0
+   868 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   869 ;;      Params:         0       0       0       0       0
+   870 ;;      Locals:         0       0       0       0       0
+   871 ;;      Temps:          0       0       0       0       0
+   872 ;;      Totals:         0       0       0       0       0
+   873 ;;Total ram usage:        0 bytes
+   874 ;; Hardware stack levels used:    1
+   875 ;; This function calls:
+   876 ;;		Nothing
+   877 ;; This function is called by:
+   878 ;;		_motor_running_10s
+   879 ;;		_main
+   880 ;; This function uses a non-reentrant model
+   881 ;;
+   882                           
+   883                           
+   884                           ;psect for function _motor_run
+   885  069F                     _motor_run:	
+   886                           
+   887                           ;main.c: 40: RD4 = motor.x;
+   888                           
+   889                           ;incstack = 0
+   890                           ; Regs used in _motor_run: []
+   891  069F  1283               	bcf	3,5	;RP0=0, select bank0
+   892  06A0  1303               	bcf	3,6	;RP1=0, select bank0
+   893  06A1  1C20               	btfss	_motor,0
+   894  06A2  2EA7               	goto	u230
+   895  06A3  1283               	bcf	3,5	;RP0=0, select bank0
+   896  06A4  1303               	bcf	3,6	;RP1=0, select bank0
+   897  06A5  1608               	bsf	8,4	;volatile
+   898  06A6  2EAA               	goto	u244
+   899  06A7                     u230:	
+   900  06A7  1283               	bcf	3,5	;RP0=0, select bank0
+   901  06A8  1303               	bcf	3,6	;RP1=0, select bank0
+   902  06A9  1208               	bcf	8,4	;volatile
+   903  06AA                     u244:	
+   904                           
+   905                           ;main.c: 41: RD7 = motor.y;
+   906  06AA  1C21               	btfss	_motor+1,0
+   907  06AB  2EB0               	goto	u250
+   908  06AC  1283               	bcf	3,5	;RP0=0, select bank0
+   909  06AD  1303               	bcf	3,6	;RP1=0, select bank0
+   910  06AE  1788               	bsf	8,7	;volatile
+   911  06AF  0008               	return
+   912  06B0                     u250:	
+   913  06B0  1283               	bcf	3,5	;RP0=0, select bank0
+   914  06B1  1303               	bcf	3,6	;RP1=0, select bank0
+   915  06B2  1388               	bcf	8,7	;volatile
+   916  06B3  0008               	return
+   917  06B4                     __end_of_motor_run:	
+   918                           
+   919                           	psect	text9
+   920  070F                     __ptext9:	
+   921 ;; *************** function _check_disrupt *****************
+   922 ;; Defined at:
+   923 ;;		line 150 in file "main.c"
+   924 ;; Parameters:    Size  Location     Type
+   925 ;;		None
+   926 ;; Auto vars:     Size  Location     Type
+   927 ;;		None
+   928 ;; Return value:  Size  Location     Type
+   929 ;;                  2   11[COMMON] int 
+   930 ;; Registers used:
+   931 ;;		wreg, status,2, status,0, pclath, cstack
+   932 ;; Tracked objects:
+   933 ;;		On entry : 0/0
+   934 ;;		On exit  : 0/0
+   935 ;;		Unchanged: 0/0
+   936 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   937 ;;      Params:         2       0       0       0       0
+   938 ;;      Locals:         0       0       0       0       0
+   939 ;;      Temps:          0       2       0       0       0
+   940 ;;      Totals:         2       2       0       0       0
+   941 ;;Total ram usage:        4 bytes
+   942 ;; Hardware stack levels used:    1
+   943 ;; Hardware stack levels required when called:    1
+   944 ;; This function calls:
+   945 ;;		_measure
+   946 ;; This function is called by:
+   947 ;;		_motor_running_10s
+   948 ;; This function uses a non-reentrant model
+   949 ;;
+   950                           
+   951                           
+   952                           ;psect for function _check_disrupt
+   953  070F                     _check_disrupt:	
+   954                           
+   955                           ;main.c: 152: motor.uin = measure();
+   956                           
+   957                           ;incstack = 0
+   958                           ; Regs used in _check_disrupt: [wreg+status,2+status,0+pclath+cstack]
+   959  070F  120A  118A  2738  120A  118A  	fcall	_measure
+   960  0714  0871               	movf	?_measure+1,w
+   961  0715  1283               	bcf	3,5	;RP0=0, select bank0
+   962  0716  1303               	bcf	3,6	;RP1=0, select bank0
+   963  0717  01A3               	clrf	_motor+3
+   964  0718  07A3               	addwf	_motor+3,f
+   965  0719  0870               	movf	?_measure,w
+   966  071A  01A2               	clrf	_motor+2
+   967  071B  07A2               	addwf	_motor+2,f
+   968                           
+   969                           ;main.c: 153: if ( (motor.uin ^ motor.uin_prev) & 0b1000000000)
+   970  071C  0824               	movf	_motor+4,w
+   971  071D  0622               	xorwf	_motor+2,w
+   972  071E  00A6               	movwf	??_check_disrupt
+   973  071F  0825               	movf	_motor+5,w
+   974  0720  0623               	xorwf	_motor+3,w
+   975  0721  00A7               	movwf	??_check_disrupt+1
+   976  0722  1CA7               	btfss	??_check_disrupt+1,1
+   977  0723  2F2F               	goto	l733
+   978                           
+   979                           ;main.c: 154: {
+   980                           ;main.c: 155: motor.uin_prev = motor.uin;
+   981  0724  0823               	movf	_motor+3,w
+   982  0725  01A5               	clrf	_motor+5
+   983  0726  07A5               	addwf	_motor+5,f
+   984  0727  0822               	movf	_motor+2,w
+   985  0728  01A4               	clrf	_motor+4
+   986  0729  07A4               	addwf	_motor+4,f
+   987                           
+   988                           ;main.c: 156: return 1;
+   989  072A  3001               	movlw	1
+   990  072B  00FB               	movwf	?_check_disrupt
+   991  072C  3000               	movlw	0
+   992  072D  00FC               	movwf	?_check_disrupt+1
+   993                           
+   994                           ;main.c: 157: }
+   995  072E  0008               	return
+   996  072F                     l733:	
+   997                           
+   998                           ;main.c: 158: else {
+   999                           ;main.c: 159: motor.uin_prev = motor.uin;
+  1000  072F  0823               	movf	_motor+3,w
+  1001  0730  01A5               	clrf	_motor+5
+  1002  0731  07A5               	addwf	_motor+5,f
+  1003  0732  0822               	movf	_motor+2,w
+  1004  0733  01A4               	clrf	_motor+4
+  1005  0734  07A4               	addwf	_motor+4,f
+  1006                           
+  1007                           ;main.c: 160: return 0;
+  1008  0735  01FB               	clrf	?_check_disrupt
+  1009  0736  01FC               	clrf	?_check_disrupt+1
+  1010  0737  0008               	return
+  1011  0738                     __end_of_check_disrupt:	
+  1012                           
+  1013                           	psect	text10
+  1014  0738                     __ptext10:	
+  1015 ;; *************** function _measure *****************
+  1016 ;; Defined at:
+  1017 ;;		line 142 in file "main.c"
+  1018 ;; Parameters:    Size  Location     Type
+  1019 ;;		None
+  1020 ;; Auto vars:     Size  Location     Type
+  1021 ;;  value           2    9[COMMON] int 
+  1022 ;; Return value:  Size  Location     Type
+  1023 ;;                  2    0[COMMON] int 
+  1024 ;; Registers used:
+  1025 ;;		wreg, status,2, status,0
+  1026 ;; Tracked objects:
+  1027 ;;		On entry : 0/0
+  1028 ;;		On exit  : 0/0
+  1029 ;;		Unchanged: 0/0
+  1030 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1031 ;;      Params:         2       0       0       0       0
+  1032 ;;      Locals:         2       0       0       0       0
+  1033 ;;      Temps:          7       0       0       0       0
+  1034 ;;      Totals:        11       0       0       0       0
+  1035 ;;Total ram usage:       11 bytes
+  1036 ;; Hardware stack levels used:    1
+  1037 ;; This function calls:
+  1038 ;;		Nothing
+  1039 ;; This function is called by:
+  1040 ;;		_check_disrupt
+  1041 ;;		_main
+  1042 ;; This function uses a non-reentrant model
+  1043 ;;
+  1044                           
+  1045                           
+  1046                           ;psect for function _measure
+  1047  0738                     _measure:	
+  1048                           
+  1049                           ;main.c: 144: ADCON0bits.GO_DONE = 1;
+  1050                           
+  1051                           ;incstack = 0
+  1052                           ; Regs used in _measure: [wreg+status,2+status,0]
+  1053  0738  1283               	bcf	3,5	;RP0=0, select bank0
+  1054  0739  1303               	bcf	3,6	;RP1=0, select bank0
+  1055  073A  151F               	bsf	31,2	;volatile
+  1056  073B                     l96:	
+  1057                           ;main.c: 145: while(ADCON0bits.GO_DONE);
+  1058                           
+  1059  073B  191F               	btfsc	31,2	;volatile
+  1060  073C  2F3B               	goto	l96
+  1061                           
+  1062                           ;main.c: 146: int value = (ADRESH << 2) | ( (ADRESL & 0xc0) >> 6);
+  1063  073D  1683               	bsf	3,5	;RP0=1, select bank1
+  1064  073E  1303               	bcf	3,6	;RP1=0, select bank1
+  1065  073F  081E               	movf	30,w	;volatile
+  1066  0740  00F2               	movwf	??_measure
+  1067  0741  3006               	movlw	6
+  1068  0742                     u225:	
+  1069  0742  1003               	clrc
+  1070  0743  0CF2               	rrf	??_measure,f
+  1071  0744  3EFF               	addlw	-1
+  1072  0745  1D03               	skipz
+  1073  0746  2F42               	goto	u225
+  1074  0747  0872               	movf	??_measure,w
+  1075  0748  3903               	andlw	3
+  1076  0749  00F3               	movwf	??_measure+1
+  1077  074A  01F4               	clrf	??_measure+2
+  1078  074B  1283               	bcf	3,5	;RP0=0, select bank0
+  1079  074C  1303               	bcf	3,6	;RP1=0, select bank0
+  1080  074D  081E               	movf	30,w	;volatile
+  1081  074E  00F5               	movwf	??_measure+3
+  1082  074F  01F6               	clrf	??_measure+4
+  1083  0750  1003               	clrc
+  1084  0751  0DF5               	rlf	??_measure+3,f
+  1085  0752  0DF6               	rlf	??_measure+4,f
+  1086  0753  1003               	clrc
+  1087  0754  0DF5               	rlf	??_measure+3,f
+  1088  0755  0DF6               	rlf	??_measure+4,f
+  1089  0756  0873               	movf	??_measure+1,w
+  1090  0757  0475               	iorwf	??_measure+3,w
+  1091  0758  00F7               	movwf	??_measure+5
+  1092  0759  0874               	movf	??_measure+2,w
+  1093  075A  0476               	iorwf	??_measure+4,w
+  1094  075B  00F8               	movwf	??_measure+6
+  1095  075C  0877               	movf	??_measure+5,w
+  1096  075D  00F9               	movwf	measure@value
+  1097  075E  0878               	movf	??_measure+6,w
+  1098  075F  00FA               	movwf	measure@value+1
+  1099                           
+  1100                           ;main.c: 147: return value;
+  1101  0760  087A               	movf	measure@value+1,w
+  1102  0761  01F1               	clrf	?_measure+1
+  1103  0762  07F1               	addwf	?_measure+1,f
+  1104  0763  0879               	movf	measure@value,w
+  1105  0764  01F0               	clrf	?_measure
+  1106  0765  07F0               	addwf	?_measure,f
+  1107  0766  0008               	return
+  1108  0767                     __end_of_measure:	
+  1109                           
+  1110                           	psect	text11
+  1111  06B4                     __ptext11:	
+  1112 ;; *************** function _measure_predelay_20ms *****************
+  1113 ;; Defined at:
+  1114 ;;		line 93 in file "main.c"
+  1115 ;; Parameters:    Size  Location     Type
+  1116 ;;		None
+  1117 ;; Auto vars:     Size  Location     Type
+  1118 ;;  i               2    0[COMMON] int 
+  1119 ;; Return value:  Size  Location     Type
+  1120 ;;		None               void
+  1121 ;; Registers used:
+  1122 ;;		wreg, status,2, btemp+1
+  1123 ;; Tracked objects:
+  1124 ;;		On entry : 0/0
+  1125 ;;		On exit  : 0/0
+  1126 ;;		Unchanged: 0/0
+  1127 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1128 ;;      Params:         0       0       0       0       0
+  1129 ;;      Locals:         2       0       0       0       0
+  1130 ;;      Temps:          0       0       0       0       0
+  1131 ;;      Totals:         2       0       0       0       0
+  1132 ;;Total ram usage:        2 bytes
+  1133 ;; Hardware stack levels used:    1
+  1134 ;; This function calls:
+  1135 ;;		Nothing
+  1136 ;; This function is called by:
+  1137 ;;		_main
+  1138 ;; This function uses a non-reentrant model
+  1139 ;;
+  1140                           
+  1141                           
+  1142                           ;psect for function _measure_predelay_20ms
+  1143  06B4                     _measure_predelay_20ms:	
+  1144                           
+  1145                           ;main.c: 96: for(int i=0; i<2; ++i) {
+  1146                           
+  1147                           ;incstack = 0
+  1148                           ; Regs used in _measure_predelay_20ms: [wreg+status,2+btemp+1]
+  1149  06B4  01F0               	clrf	measure_predelay_20ms@i
+  1150  06B5  01F1               	clrf	measure_predelay_20ms@i+1
+  1151  06B6                     L4:	
+  1152  06B6  0871               	movf	measure_predelay_20ms@i+1,w
+  1153  06B7  3A80               	xorlw	128
+  1154  06B8  00FF               	movwf	127
+  1155  06B9  3080               	movlw	128
+  1156  06BA  027F               	subwf	127,w
+  1157  06BB  1D03               	skipz
+  1158  06BC  2EBF               	goto	u345
+  1159  06BD  3002               	movlw	2
+  1160  06BE  0270               	subwf	measure_predelay_20ms@i,w
+  1161  06BF                     u345:	
+  1162  06BF  1803               	btfsc	3,0
+  1163  06C0  0008               	return
+  1164                           
+  1165                           ;main.c: 97: TMR1 = 19456;
+  1166  06C1  304C               	movlw	76
+  1167  06C2  1283               	bcf	3,5	;RP0=0, select bank0
+  1168  06C3  1303               	bcf	3,6	;RP1=0, select bank0
+  1169  06C4  008F               	movwf	15	;volatile
+  1170  06C5  3000               	movlw	0
+  1171  06C6  008E               	movwf	14	;volatile
+  1172  06C7                     l65:	
+  1173                           ;main.c: 98: while(!TMR1IF);
+  1174                           
+  1175  06C7  1C0C               	btfss	12,0	;volatile
+  1176  06C8  2EC7               	goto	l65
+  1177                           
+  1178                           ;main.c: 99: TMR1IF = 0;
+  1179  06C9  100C               	bcf	12,0	;volatile
+  1180  06CA  3001               	movlw	1
+  1181  06CB  07F0               	addwf	measure_predelay_20ms@i,f
+  1182  06CC  1803               	skipnc
+  1183  06CD  0AF1               	incf	measure_predelay_20ms@i+1,f
+  1184  06CE  3000               	movlw	0
+  1185  06CF  07F1               	addwf	measure_predelay_20ms@i+1,f
+  1186  06D0  2EB6               	goto	L4
+  1187  06D1                     __end_of_measure_predelay_20ms:	
+  1188                           
+  1189                           	psect	text12
+  1190  0671                     __ptext12:	
+  1191 ;; *************** function _adconverter_configure *****************
+  1192 ;; Defined at:
+  1193 ;;		line 84 in file "main.c"
+  1194 ;; Parameters:    Size  Location     Type
+  1195 ;;		None
+  1196 ;; Auto vars:     Size  Location     Type
+  1197 ;;		None
+  1198 ;; Return value:  Size  Location     Type
+  1199 ;;		None               void
+  1200 ;; Registers used:
+  1201 ;;		wreg
+  1202 ;; Tracked objects:
+  1203 ;;		On entry : 0/0
+  1204 ;;		On exit  : 0/0
+  1205 ;;		Unchanged: 0/0
+  1206 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1207 ;;      Params:         0       0       0       0       0
+  1208 ;;      Locals:         0       0       0       0       0
+  1209 ;;      Temps:          0       0       0       0       0
+  1210 ;;      Totals:         0       0       0       0       0
+  1211 ;;Total ram usage:        0 bytes
+  1212 ;; Hardware stack levels used:    1
+  1213 ;; This function calls:
+  1214 ;;		Nothing
+  1215 ;; This function is called by:
+  1216 ;;		_main
+  1217 ;; This function uses a non-reentrant model
+  1218 ;;
+  1219                           
+  1220                           
+  1221                           ;psect for function _adconverter_configure
+  1222  0671                     _adconverter_configure:	
+  1223                           
+  1224                           ;main.c: 88: ADCON1 = 0b000001110;
+  1225                           
+  1226                           ;incstack = 0
+  1227                           ; Regs used in _adconverter_configure: [wreg]
+  1228  0671  300E               	movlw	14
+  1229  0672  1683               	bsf	3,5	;RP0=1, select bank1
+  1230  0673  1303               	bcf	3,6	;RP1=0, select bank1
+  1231  0674  009F               	movwf	31	;volatile
+  1232                           
+  1233                           ;main.c: 89: ADCON0 = 0b10000001;
+  1234  0675  3081               	movlw	129
+  1235  0676  1283               	bcf	3,5	;RP0=0, select bank0
+  1236  0677  1303               	bcf	3,6	;RP1=0, select bank0
+  1237  0678  009F               	movwf	31	;volatile
+  1238  0679  0008               	return
+  1239  067A                     __end_of_adconverter_configure:	
+  1240  007E                     btemp	set	126	;btemp
+  1241  007E                     wtemp	set	126
+  1242  007E                     wtemp0	set	126
+  1243  0080                     wtemp1	set	128
+  1244  0082                     wtemp2	set	130
+  1245  0084                     wtemp3	set	132
+  1246  0086                     wtemp4	set	134
+  1247  0088                     wtemp5	set	136
+  1248  007F                     wtemp6	set	127
+  1249  007E                     ttemp	set	126
+  1250  007E                     ttemp0	set	126
+  1251  0081                     ttemp1	set	129
+  1252  0084                     ttemp2	set	132
+  1253  0087                     ttemp3	set	135
+  1254  007F                     ttemp4	set	127
+  1255  007E                     ltemp	set	126
+  1256  007E                     ltemp0	set	126
+  1257  0082                     ltemp1	set	130
+  1258  0086                     ltemp2	set	134
+  1259  0080                     ltemp3	set	128
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         6
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     13      13
+    BANK0            80      4      10
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _motor_running_10s->_check_disrupt
+    _check_disrupt->_measure
+
+Critical Paths under _main in BANK0
+
+    _main->_motor_running_10s
+    _motor_running_10s->_check_disrupt
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0     276
+              _adconverter_configure
+                            _measure
+              _measure_predelay_20ms
+                          _motor_run
+                  _motor_running_10s
+                          _motor_set
+                      _motor_stop_1s
+                    _ports_configure
+                      _rotate_change
+                   _timer1_configure
+ ---------------------------------------------------------------------------------
+ (1) _timer1_configure                                     0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _rotate_change                                        1     1      0       0
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _ports_configure                                      0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _motor_set                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _motor_running_10s                                    2     2      0     161
+                                              2 BANK0      2     2      0
+                      _check_disrupt
+                          _motor_run
+                      _motor_stop_1s
+                      _time_delay_2s
+ ---------------------------------------------------------------------------------
+ (2) _time_delay_2s                                        2     2      0      46
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ (1) _motor_stop_1s                                        2     2      0      46
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ (2) _motor_run                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _check_disrupt                                        4     2      2      23
+                                             11 COMMON     2     0      2
+                                              0 BANK0      2     2      0
+                            _measure
+ ---------------------------------------------------------------------------------
+ (3) _measure                                             11     9      2      23
+                                              0 COMMON    11     9      2
+ ---------------------------------------------------------------------------------
+ (1) _measure_predelay_20ms                                2     2      0      46
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ (1) _adconverter_configure                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _adconverter_configure
+   _measure
+   _measure_predelay_20ms
+   _motor_run
+   _motor_running_10s
+     _check_disrupt
+       _measure
+     _motor_run
+     _motor_stop_1s
+     _time_delay_2s
+   _motor_set
+   _motor_stop_1s
+   _ports_configure
+   _rotate_change
+   _timer1_configure
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      D       D       1       92.9%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0      17       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      4       A       5       12.5%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0      17      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.33 build 59893 
+Symbol Table                                                                                   Thu Jan  8 09:56:40 2015
+
+                   __CFG_CP$OFF 0000                              l65 06C7                              l73 0705  
+                            l81 06E4                              l96 073B                              l89 077C  
+               ??_motor_stop_1s 0070                             l733 072F                             l781 0796  
+                           l799 07CD                             _GIE 005F                             _RD4 0044  
+                           _RD7 0047                             u230 06A7                             u225 0742  
+                           u305 06DC                             u250 06B0                             u244 06AA  
+                           u345 06BF                    __CFG_CPD$OFF 0000                             u275 06FD  
+                           u375 0774                    __CFG_FOSC$HS 0000                   _rotate_change 068E  
+                  __CFG_LVP$OFF 0000           __end_of_check_disrupt 0738                            _TMR1 000E  
+                  __CFG_WRT$OFF 0000                            _main 07A0                            btemp 007E  
+                          ltemp 007E                            start 0000                            ttemp 007E  
+                          wtemp 007E                           ?_main 0070                   __CFG_WDTE$OFF 0000  
+                         _TRISA 0085                           _TRISD 0088                   __CFG_PWRTE$ON 0000  
+                ?_rotate_change 0070                 _ports_configure 067A                 __end_of_measure 0767  
+                         _motor 0020                  __CFG_BOREN$OFF 0000                           ltemp0 007E  
+                         ltemp1 0082                           ltemp2 0086                           ltemp3 0080  
+                         ttemp0 007E                           ttemp1 0081                           ttemp2 0084  
+                         ttemp3 0087                           ttemp4 007F                           status 0003  
+                         wtemp0 007E                           wtemp1 0080                           wtemp2 0082  
+                         wtemp3 0084                           wtemp4 0086                           wtemp5 0088  
+                         wtemp6 007F                 __initialization 07F6                    __end_of_main 07F6  
+                        ??_main 007D                _timer1_configure 0683                          _ADCON0 001F  
+                        _ADCON1 009F                          _ADRESH 001E                          _ADRESL 009E  
+       ??_adconverter_configure 0070                          _TMR1IF 0060                          _TMR1CS 0081  
+                        _TMR1ON 0080                          _TRISB4 0434                          _TRISB5 0435  
+                        _TRISE0 0448         __end_of_ports_configure 0683                       ??_measure 0072  
+               ??_rotate_change 0070         __end_of__initialization 07FC                  __pcstackCOMMON 0070  
+             _motor_running_10s 0767              ?_motor_running_10s 0070           _measure_predelay_20ms 06B4  
+           ??_motor_running_10s 007D                      __pbssBANK0 0020       __end_of_motor_running_10s 07A0  
+                    __pmaintext 07A0           __end_of_time_delay_2s 06EE                    measure@value 0079  
+                       _T1CKPS0 0084                         _T1CKPS1 0085                ?_ports_configure 0070  
+            __size_of_motor_set 0006           __end_of_motor_stop_1s 070F              __size_of_motor_run 0015  
+      __end_of_timer1_configure 068E          ?_measure_predelay_20ms 0070          __size_of_check_disrupt 0029  
+                       __ptext0 0000                         __ptext1 0683                         __ptext2 068E  
+                       __ptext3 067A                         __ptext4 066B                         __ptext5 0767  
+                       __ptext6 06D1                         __ptext7 06EE                         __ptext8 069F  
+                       __ptext9 070F          measure_predelay_20ms@i 0070                         _measure 0738  
+          end_of_initialization 07FC  __size_of_adconverter_configure 0009   __end_of_adconverter_configure 067A  
+             __end_of_motor_set 0671               __end_of_motor_run 06B4      __size_of_motor_running_10s 0039  
+                 _check_disrupt 070F             start_initialization 07F6           __end_of_rotate_change 069F  
+                ?_check_disrupt 007B                       ___latbits 0002                   __pcstackBANK0 0026  
+       ??_measure_predelay_20ms 0070               ?_timer1_configure 0070              ??_timer1_configure 0070  
+                      ?_measure 0070                 ??_check_disrupt 0026          __size_of_time_delay_2s 001D  
+      __size_of_ports_configure 0009          __size_of_motor_stop_1s 0021              motor_running_10s@i 0028  
+                     _motor_set 066B                       _motor_run 069F                      _ADCON0bits 001F  
+                time_delay_2s@i 0070           _adconverter_configure 0671                   _time_delay_2s 06D1  
+                    ?_motor_set 0070                      ?_motor_run 0070                   _motor_stop_1s 06EE  
+              __size_of_measure 002F                        __ptext10 0738                        __ptext11 06B4  
+                      __ptext12 0671                  motor_stop_1s@i 0070                   __size_of_main 0056  
+             ??_ports_configure 0070                  ?_time_delay_2s 0070                  ?_motor_stop_1s 0070  
+        ?_adconverter_configure 0070                     ??_motor_set 0070                     ??_motor_run 0070  
+        __size_of_rotate_change 0011  __size_of_measure_predelay_20ms 001D   __end_of_measure_predelay_20ms 06D1  
+     __size_of_timer1_configure 000B                 ??_time_delay_2s 0070  

@@ -1,0 +1,15 @@
+_rotate_change: CODE, 1678 0 17
+_check_disrupt: CODE, 1807 0 41
+_time_delay_2s: CODE, 1745 0 29
+_measure: CODE, 1848 0 47
+_main: CODE, 1952 0 86
+__initialization: CODE, 2038 0 6
+_motor_set: CODE, 1643 0 6
+_ports_configure: CODE, 1658 0 9
+_motor_stop_1s: CODE, 1774 0 33
+_adconverter_configure: CODE, 1649 0 9
+_motor_running_10s: CODE, 1895 0 57
+_measure_predelay_20ms: CODE, 1716 0 29
+_motor_run: CODE, 1695 0 21
+_timer1_configure: CODE, 1667 0 11
+Total: 401

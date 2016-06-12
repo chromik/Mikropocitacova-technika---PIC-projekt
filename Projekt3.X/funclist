@@ -1,0 +1,19 @@
+_preruseni: CODE, 1654 0 128
+_motor_direct_switch: CODE, 1408 0 17
+_delay_50ms: CODE, 1564 0 43
+_measure: CODE, 1607 0 47
+_main: CODE, 1782 0 227
+__initialization: CODE, 2009 0 35
+_delay_10ms: CODE, 1463 0 31
+i1_motor_stop: CODE, 1351 0 5
+_motor_stop: CODE, 1356 0 5
+_motor_start: CODE, 1444 0 19
+_is_motor_running: CODE, 1378 0 9
+i1_motor_start: CODE, 1425 0 19
+_set_interrupts: CODE, 1361 0 8
+_je_kladny_smer: CODE, 1525 0 39
+_adconverter_configure: CODE, 1369 0 9
+_measure_predelay_20ms: CODE, 1494 0 31
+_set_in_out: CODE, 1387 0 10
+_timer1_configure: CODE, 1397 0 11
+Total: 693

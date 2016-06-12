@@ -1,0 +1,42 @@
+MPLINK 5.05, LINKER
+Linker Map File - Created Wed Nov 19 15:17:26 2014
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000046
+                   .cinit    romdata   0x000023    program   0x000004
+.config_2007_BUILD/DEFAULT/PRODUCTION/MAIN.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000024      
+                            0x002007    0x002007      
+            38 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  Delay1s   0x000013    program     static /home/grahg/MPLABXProjects/Projekt1.X/main.asm
+                Delay1s_0   0x000019    program     static /home/grahg/MPLABXProjects/Projekt1.X/main.asm
+             _.org_0_001A   0x00001a    program     static /home/grahg/MPLABXProjects/Projekt1.X/main.asm
+             _.org_0_001C   0x00001c    program     static /home/grahg/MPLABXProjects/Projekt1.X/main.asm
+                main_loop   0x000005    program     static /home/grahg/MPLABXProjects/Projekt1.X/main.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                main_loop   0x000005    program     static /home/grahg/MPLABXProjects/Projekt1.X/main.asm
+                  Delay1s   0x000013    program     static /home/grahg/MPLABXProjects/Projekt1.X/main.asm
+                Delay1s_0   0x000019    program     static /home/grahg/MPLABXProjects/Projekt1.X/main.asm
+             _.org_0_001A   0x00001a    program     static /home/grahg/MPLABXProjects/Projekt1.X/main.asm
+             _.org_0_001C   0x00001c    program     static /home/grahg/MPLABXProjects/Projekt1.X/main.asm
+
+

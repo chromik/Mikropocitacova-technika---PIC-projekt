@@ -1,0 +1,284 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"4 /opt/microchip/xc8/v1.33/sources/common/abdiv.c
+[v ___abdiv __abdiv `(c  1 e 1 0 ]
+"4 /opt/microchip/xc8/v1.33/sources/common/abmod.c
+[v ___abmod __abmod `(c  1 e 1 0 ]
+"33 /opt/microchip/xc8/v1.33/sources/common/abtoft.c
+[v ___abtoft __abtoft `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/common/aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"5 /opt/microchip/xc8/v1.33/sources/common/almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"42 /opt/microchip/xc8/v1.33/sources/common/altoft.c
+[v ___altoft __altoft `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/common/atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/common/atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"37 /opt/microchip/xc8/v1.33/sources/common/attoft.c
+[v ___attoft __attoft `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/common/awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/common/awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"32 /opt/microchip/xc8/v1.33/sources/common/awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.33/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.33/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"4 /opt/microchip/xc8/v1.33/sources/common/ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"62 /opt/microchip/xc8/v1.33/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.33/sources/common/ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"18 /opt/microchip/xc8/v1.33/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 /opt/microchip/xc8/v1.33/sources/common/fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"4 /opt/microchip/xc8/v1.33/sources/common/lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 /opt/microchip/xc8/v1.33/sources/common/lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"27 /opt/microchip/xc8/v1.33/sources/common/lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/common/lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/common/llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"35 /opt/microchip/xc8/v1.33/sources/common/lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/common/ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/common/ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"30 /opt/microchip/xc8/v1.33/sources/common/lttoft.c
+[v ___lttoft __lttoft `(f  1 e 3 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/common/lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/common/lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"28 /opt/microchip/xc8/v1.33/sources/common/lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.33/sources/common/Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 /opt/microchip/xc8/v1.33/sources/common/Umul24.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.33/sources/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"4 /opt/microchip/xc8/v1.33/sources/common/Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"6 /opt/microchip/xc8/v1.33/sources/pic/eeprom.c
+[v _eecpymem eecpymem `(v  1 e 0 0 ]
+"24
+[v _memcpyee memcpyee `(v  1 e 0 0 ]
+"48
+[v ___eetoc __eetoc `(uc  1 e 1 0 ]
+"56
+[v ___eetoi __eetoi `(ui  1 e 2 0 ]
+"64
+[v ___eetom __eetom `(um  1 e 3 0 ]
+"72
+[v ___eetol __eetol `(ul  1 e 4 0 ]
+"80
+[v ___ctoee __ctoee `(uc  1 e 1 0 ]
+"87
+[v ___itoee __itoee `(ui  1 e 2 0 ]
+"94
+[v ___mtoee __mtoee `(um  1 e 3 0 ]
+"101
+[v ___ltoee __ltoee `(ul  1 e 4 0 ]
+"108
+[v ___eetoft __eetoft `(f  1 e 3 0 ]
+"116
+[v ___eetofl __eetofl `(d  1 e 3 0 ]
+"124
+[v ___fttoee __fttoee `(f  1 e 3 0 ]
+"131
+[v ___fltoee __fltoee `(d  1 e 3 0 ]
+"49 /opt/microchip/xc8/v1.33/sources/pic/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"32 /home/grahg/Dropbox/MPLABXProjects/Projekt2.X/main.c
+[v _motor_set motor_set `(v  1 e 0 0 ]
+"38
+[v _motor_run motor_run `T(v  1 e 0 0 ]
+"44
+[v _rotate_change rotate_change `T(v  1 e 0 0 ]
+"63
+[v _ports_configure ports_configure `T(v  1 e 0 0 ]
+"73
+[v _timer1_configure timer1_configure `T(v  1 e 0 0 ]
+"84
+[v _adconverter_configure adconverter_configure `T(v  1 e 0 0 ]
+"93
+[v _measure_predelay_20ms measure_predelay_20ms `(v  1 e 0 0 ]
+"103
+[v _motor_stop_1s motor_stop_1s `(v  1 e 0 0 ]
+"115
+[v _time_delay_2s time_delay_2s `(v  1 e 0 0 ]
+"125
+[v _motor_running_10s motor_running_10s `(v  1 e 0 0 ]
+"142
+[v _measure measure `(i  1 e 2 0 ]
+"150
+[v _check_disrupt check_disrupt `(i  1 e 2 0 ]
+"165
+[v _main main `(v  1 e 0 0 ]
+"617 /opt/microchip/xc8/v1.33/include/pic16f877a.h
+[v _TMR1 TMR1 `VEus  1 e 2 @14 ]
+"1116
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1122
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+[s S43 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 GO_nDONE 1 0 :1:2 
+`uc 1 CHS 1 0 :3:3 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1153
+[s S49 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO 1 0 :1:2 
+`uc 1 CHS0 1 0 :1:3 
+`uc 1 CHS1 1 0 :1:4 
+`uc 1 CHS2 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S57 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nDONE 1 0 :1:2 
+]
+[s S60 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO_DONE 1 0 :1:2 
+]
+[u S63 . 1 `S43 1 . 1 0 `S49 1 . 1 0 `S57 1 . 1 0 `S60 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES63  1 e 1 @31 ]
+"1286
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1457
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"2167
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2173
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"2231
+[v _EEDATA EEDATA `VEuc  1 e 1 @268 ]
+"2237
+[v _EEADR EEADR `VEuc  1 e 1 @269 ]
+"2255
+[v _EECON1 EECON1 `VEuc  1 e 1 @396 ]
+"2299
+[v _EECON2 EECON2 `VEuc  1 e 1 @397 ]
+"2349
+[v _CARRY CARRY `VEb  1 e 0 @24 ]
+"2441
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2559
+[v _RD RD `VEb  1 e 0 @3168 ]
+"2569
+[v _RD4 RD4 `VEb  1 e 0 @68 ]
+"2575
+[v _RD7 RD7 `VEb  1 e 0 @71 ]
+"2633
+[v _T1CKPS0 T1CKPS0 `VEb  1 e 0 @132 ]
+"2635
+[v _T1CKPS1 T1CKPS1 `VEb  1 e 0 @133 ]
+"2651
+[v _TMR1CS TMR1CS `VEb  1 e 0 @129 ]
+"2655
+[v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
+"2657
+[v _TMR1ON TMR1ON `VEb  1 e 0 @128 ]
+"2693
+[v _TRISB4 TRISB4 `VEb  1 e 0 @1076 ]
+"2695
+[v _TRISB5 TRISB5 `VEb  1 e 0 @1077 ]
+"2733
+[v _TRISE0 TRISE0 `VEb  1 e 0 @1096 ]
+"2759
+[v _WR WR `VEb  1 e 0 @3169 ]
+"2761
+[v _WREN WREN `VEb  1 e 0 @3170 ]
+[s S19 motor 6 `uc 1 x 1 0 `uc 1 y 1 1 `i 1 uin 2 2 `i 1 uin_prev 2 4 ]
+"30 /home/grahg/Dropbox/MPLABXProjects/Projekt2.X/main.c
+[v _motor motor `S19  1 e 6 0 ]
+"165
+[v _main main `(v  1 e 0 0 ]
+{
+"191
+} 0
+"73
+[v _timer1_configure timer1_configure `T(v  1 e 0 0 ]
+{
+"82
+} 0
+"44
+[v _rotate_change rotate_change `T(v  1 e 0 0 ]
+{
+"48
+} 0
+"63
+[v _ports_configure ports_configure `T(v  1 e 0 0 ]
+{
+"71
+} 0
+"32
+[v _motor_set motor_set `(v  1 e 0 0 ]
+{
+"36
+} 0
+"125
+[v _motor_running_10s motor_running_10s `(v  1 e 0 0 ]
+{
+"128
+[v motor_running_10s@i i `i  1 a 2 2 ]
+"140
+} 0
+"115
+[v _time_delay_2s time_delay_2s `(v  1 e 0 0 ]
+{
+"118
+[v time_delay_2s@i i `i  1 a 2 0 ]
+"123
+} 0
+"103
+[v _motor_stop_1s motor_stop_1s `(v  1 e 0 0 ]
+{
+"108
+[v motor_stop_1s@i i `i  1 a 2 0 ]
+"113
+} 0
+"38
+[v _motor_run motor_run `T(v  1 e 0 0 ]
+{
+"42
+} 0
+"150
+[v _check_disrupt check_disrupt `(i  1 e 2 0 ]
+{
+"162
+} 0
+"142
+[v _measure measure `(i  1 e 2 0 ]
+{
+"146
+[v measure@value value `i  1 a 2 9 ]
+"148
+} 0
+"93
+[v _measure_predelay_20ms measure_predelay_20ms `(v  1 e 0 0 ]
+{
+"96
+[v measure_predelay_20ms@i i `i  1 a 2 0 ]
+"101
+} 0
+"84
+[v _adconverter_configure adconverter_configure `T(v  1 e 0 0 ]
+{
+"90
+} 0
